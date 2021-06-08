@@ -7,6 +7,7 @@ import { HomeModule } from './home/home.module';
 import {BrowseModule } from "./browse/browse.module";
 import { SalesModule } from './sales/sales.module';
 import { StoresModule } from './stores/stores.module';
+import { CartModule } from './cart/cart.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { StoresModule } from './stores/stores.module';
     SalesModule,
     HomeModule,
     BrowseModule,
-    BrowserModule
+    BrowserModule,
+    CartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
