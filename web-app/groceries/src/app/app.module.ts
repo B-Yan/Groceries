@@ -1,17 +1,24 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { HomeModule } from './home/home.module';
 import {BrowseModule } from "./browse/browse.module";
 import { SalesModule } from './sales/sales.module';
 import { StoresModule } from './stores/stores.module';
 import { CartModule } from './cart/cart.module';
+import { MenuEntityComponent } from './menu/menu-entity/menu-entity.component';
+import { ItemEntityComponent } from './item/item-entity/item-entity.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuEntityComponent,
+    ItemEntityComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +30,8 @@ import { CartModule } from './cart/cart.module';
     BrowserModule,
     CartModule
   ],
+ 
+
   providers: [],
   bootstrap: [AppComponent]
 })
