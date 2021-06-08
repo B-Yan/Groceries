@@ -1,0 +1,21 @@
+.counter{
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.cartItem{
+    padding: 0.5%;
+    margin: 0.5%;
+    padding-left: 1%;
+    padding-right: 1%;
+    border: black solid 1px;
+    width: 30%;
+    min-width: fit-content;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content{
+    min-width: fit-content;
+    white-space:nowrap;
+}
