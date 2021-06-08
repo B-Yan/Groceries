@@ -1,0 +1,20 @@
+.card-price{
+  color:#000;
+}
+
+.card-price-disc{ color: rgb(218, 50, 50);}
+
+.card-body{
+    position: relative;
+
+}
+.card-price-disc::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    content: '';
+    background-color: rgb(218, 50, 50);
+    height: 50px;
+    border-radius: 50px;
+}

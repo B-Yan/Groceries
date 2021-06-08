@@ -11,14 +11,13 @@ import { SalesModule } from './sales/sales.module';
 import { StoresModule } from './stores/stores.module';
 import { CartModule } from './cart/cart.module';
 import { MenuEntityComponent } from './menu/menu-entity/menu-entity.component';
-import { ItemEntityComponent } from './item/item-entity/item-entity.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuEntityComponent,
-    ItemEntityComponent
+    MenuEntityComponent
   ],
   imports: [
     BrowserModule,
