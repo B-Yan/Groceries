@@ -22,7 +22,7 @@ export class ItemEntityComponent implements OnInit {
 
   }
   public search() {
-    return this.http.get('http://localhost:8080/api/sales');
+    return this.http.get('http://localhost:8080/api/items');
   }
 
   hasDiscount(item: any) {  
