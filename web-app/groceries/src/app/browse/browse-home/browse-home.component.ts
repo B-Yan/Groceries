@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-browse-home',
