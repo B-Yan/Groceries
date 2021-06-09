@@ -17,21 +17,13 @@
   <!-- Sidebar -->
   <nav id="sidebar">
     <ul class="list-unstyled components">
-
       <h3>Browse</h3>
       <p>Category</p>
-
-
-      <li>
-        <a href="#">All Products</a>
-
-      </li>
-      <li>
-        <a href="#">Produce</a>
-      </li>
-      <li>
-        <a href="#">Dairy & Eggs</a>
-      </li>
+      <div *ngFor="let category of categories" class="entry">
+        <li>
+          <button type="button"  id="getCategoryButton" class="btn btn-success" (click)="getItemsInCategory(category.id)">{{category.name}}</button>
+        </li>
+      </div>
     </ul>
   </nav>
   <!-- Page Content -->
