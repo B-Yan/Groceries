@@ -1,14 +1,9 @@
 package StoreProject.main;
 
-import java.util.List;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-
-import StoreProject.DAO.StoreDao;
-import StoreProject.DTO.Store;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"StoreProject.Dao","StoreProject.Controllers"})
