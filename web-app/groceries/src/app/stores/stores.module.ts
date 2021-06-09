@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { StoresRoutingModule } from './stores-routing.module';
 import { StoresHomeComponent } from './stores-home/stores-home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { StoresHomeComponent } from './stores-home/stores-home.component';
   ],
   imports: [
     CommonModule,
-    StoresRoutingModule
+    StoresRoutingModule,
+    HttpClientModule
   ]
 })
 export class StoresModule { }
