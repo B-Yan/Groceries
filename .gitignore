@@ -139,3 +139,8 @@ tests/cases/user/axios-src/axios-src
 tests/cases/user/prettier/prettier
 .eslintcache
 
+
+#BackEnd
+# Application Property
+Java/main/src/main/resources/application.properties
+
