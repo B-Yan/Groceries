@@ -180,7 +180,9 @@ CREATE TABLE IF NOT EXISTS `store` (
 INSERT INTO `store` (`id`, `name`, `hours`, `areOpen`, `address`, `phoneNumber`, `email`) VALUES
 (1, 'Ocean', '1,9:00 am,5:00 pm/2,9:00 am,5:00 pm/3,9:00 am,5:00 pm/4,9:00 am,9:00 pm/5,9:00 am,5:00 pm/6,9:00 am,9:00 pm/7,9:00 am,5:00 pm', 1, '861 Ocean Ave', '(514)831-1234', 'ocean@stores.com'),
 (2, 'Sea', '1,9:00 am,5:00 pm/2,9:00 am,5:00 pm/3,9:00 am,5:00 pm/4,9:00 am,9:00 pm/5,9:00 am,5:00 pm/6,9:00 am,9:00 pm/7,9:00 am,5:00 pm', 1, '123 Sea Ave', '(514)288-1561', 'sea@stores.com'),
-(3, 'River', '1,9:00 am,5:00 pm/2,9:00 am,5:00 pm/3,9:00 am,5:00 pm/4,9:00 am,9:00 pm/5,9:00 am,5:00 pm/6,9:00 am,9:00 pm/7,9:00 am,5:00 pm', 1, '1513 River St', '(514)218-8622', 'river@stores.com');
+(3, 'River', '1,8:00 am,5:00 pm/2,8:00 am,5:00 pm/3,8:00 am,5:00 pm/4,8:00 am,8:00 pm/5,8:00 am,5:00 pm/6,8:00 am,8:00 pm/7,8:00 am,5:00 pm', 1, '1513 River St', '(514)218-8622', 'river@stores.com'),
+(4, 'The midnight store', '1,8:00 pm,11:00 pm/2,8:00 pm,11:00 pm/3,8:00 pm,11:00 pm/4,8:00 pm,11:00 pm/5,8:00 pm,11:00 pm/6,8:00 pm,11:00 pm/7,8:00 pm,11:00 pm', 1, '1513 River St', '(514)218-8622', 'river@stores.com');
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
