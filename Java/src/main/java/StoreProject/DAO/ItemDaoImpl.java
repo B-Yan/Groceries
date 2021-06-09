@@ -18,6 +18,14 @@ public class ItemDaoImpl implements ItemDao
 	JdbcTemplate jdbc;
 
 
+	public List<ItemFormatted> getItems()
+	{
+		String GET_ITEMS="SELECT i.* FROM item i";
+		List<Item> items = jdbc.query(GET_ITEMS,new ItemMapper());
+		return formatItems(items);
+
+	}
+
 	public List<ItemFormatted> getItemsByCategory(Integer categoryID) 
 	{
 		String GET_ITEMS_FOR_CATEGORY="SELECT i.* FROM item i, itemsincategory ic WHERE i.id = ic.itemID AND ic.categoryID= ?";

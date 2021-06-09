@@ -26,8 +26,13 @@ public class MainController
 	
 	@Autowired
 	CategoryDao categoryDao;
-	
-	
+
+
+	@GetMapping(value="items",produces="application/json")
+	public List<ItemFormatted> getItems()
+	{
+		return itemDao.getItems();
+	}
 	@GetMapping(value="stores",produces="application/json")
 	public List<Store> getAllStores()
 	{
