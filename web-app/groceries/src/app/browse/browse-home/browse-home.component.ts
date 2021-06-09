@@ -12,4 +12,7 @@ export class BrowseHomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  seeAllSales(): void {
+    location.href = "/sales";
+  }
 }
