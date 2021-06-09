@@ -7,9 +7,19 @@
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
+DROP USER IF EXISTS 'tempUser'@'localhost';
+CREATE USER 'tempUser'@'localhost' IDENTIFIED BY 'pass123';
+GRANT ALL PRIVILEGES ON * . * TO 'tempUser'@'localhost';
+
+DROP DATABASE IF EXISTS storedb;
+CREATE DATABASE storedb;
+
+USE storedb;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
