@@ -1,0 +1,51 @@
+package StoreProject.DTO;
+
+public class ItemFormatted //used to format json that returns due to uglyness of double precision
+{
+	private int id;
+	private String name;
+	private String description;
+	private String price;
+	private String percentageOFF;
+	private String url;
+	public int getId() 
+	{
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	public String getPercentageOFF() {
+		return percentageOFF;
+	}
+	public void setPercentageOFF(String percentageOFF) {
+		this.percentageOFF = percentageOFF;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	
+	
+	
+}
