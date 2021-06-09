@@ -1,11 +1,11 @@
 <div class="entry"><h2>Find a Falleti Foods Market</h2></div>
 <div *ngFor="let store of stores" class="entry">
     <h3 class="store">{{store.name}}</h3>
-    <ul *ngIf="!storeIsOpen(store.openAt, store.closeAt)">
+    <ul *ngIf="!storeIsOpen(store.name, store.name)">
         <li>Closed</li>
-        <li>Open at {{store.openAt}}:00</li>
+        <li>Open at {{store.name}}:00</li>
     </ul>
-    <div *ngIf="storeIsOpen(store.openAt, store.closeAt)">Close at {{store.closeAt}}:00</div>
+    <div *ngIf="storeIsOpen(store.openAt, store.closeAt)">Close at {{store.name}}:00</div>
     <div>{{store.address}}</div>
-    <div class="phone">{{store.phone}}</div>
+    <div class="phone">{{store.phoneNumber}}</div>
 </div>
