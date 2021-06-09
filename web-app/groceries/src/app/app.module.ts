@@ -29,7 +29,7 @@ import { MenuEntityComponent } from './menu/menu-entity/menu-entity.component';
     BrowserModule,
     CartModule
   ],
- 
+
 
   providers: [],
   bootstrap: [AppComponent]
