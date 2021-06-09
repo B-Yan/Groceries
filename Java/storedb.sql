@@ -87,7 +87,7 @@ INSERT INTO `item` (`id`, `name`, `description`, `price`, `percentageOFF`, `imag
 (5, 'Milk', NULL, 3.50, 0.05, NULL),
 (6, 'Cheese', NULL, 4.00, 0.05, NULL),
 (7, 'Chocolate Milk', NULL, 5.00, 0.15, NULL),
-(8, 'Bread', NULL, 1.90, 0.00, NULL),
+(8, 'Bread', NULL, 1.90, 0.00, 'https://xantilicious.com/wp-content/uploads/2017/07/for-site-2.jpg'),
 (9, 'Rolls', NULL, 1.00, 0.00, NULL),
 (10, 'Frozen Pizza', NULL, 7.00, 0.00, NULL),
 (11, 'Ice Cream', NULL, 5.00, 0.05, NULL),

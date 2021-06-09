@@ -19,7 +19,7 @@ export class StoresHomeComponent implements OnInit {
   }
 
   public search() {
-    return this.http.get('http://localhost:8080/api/stores');
+    return this.http.get('http://localhost:8090/api/stores');
   }
 
   storeIsOpen(openAt: number, closeAt:number): boolean{
