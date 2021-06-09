@@ -49,14 +49,13 @@ export class StoresHomeComponent implements OnInit {
   getHourFromWeirdFormat(weirdFormat: any){
     let date = new Date();
     let isPm = weirdFormat.split(" ")[1] == "pm";
-    console.log(weirdFormat + " isPm: " + isPm);
     let time = weirdFormat.split(" ")[0];
     if (isPm){
-      date.setHours(time.split(":")[0]+12);
+      date.setHours(12 + parseInt(time.split(":")[0]));
     } else {
-      date.setHours(time.split(":")[0]);
+      date.setHours(parseInt(time.split(":")[0]));
     }
-    date.setMinutes(time.split(":")[1]);
+    date.setMinutes(parseInt(time.split(":")[1]));
     return date;
   }
 
