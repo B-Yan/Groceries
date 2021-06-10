@@ -1,4 +1,5 @@
-<div class="entry"><h2>Find a Falleti Foods Market</h2></div>
+<div class="paddingAround">
+<div class="entry title"><h2>Find a Falleti Foods Market</h2></div>
 <div *ngFor="let store of stores" class="entry">
     <h3 class="store">{{store.name}}</h3>
     <ul *ngIf="hours != undefined && !storeIsOpen(store.id)">
@@ -7,4 +8,5 @@
     <div *ngIf="hours != undefined">Today's schedule {{openAt(store.id) | date:'shortTime'}} to {{closeAt(store.id) | date:'shortTime'}}</div>
     <div>{{store.address}}</div>
     <div class="phone">{{store.phoneNumber}}</div>
+</div>
 </div>

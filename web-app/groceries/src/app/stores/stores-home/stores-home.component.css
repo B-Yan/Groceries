@@ -1,15 +1,26 @@
 .entry {
-    border: 1px solid black;
+    border: 1px solid green;
     width: 30%;
     min-width: fit-content;
     padding: 1%;
     margin: 0;
 }
 
+.paddingAround{
+    margin: 1%;
+}
+
+.title{
+    background-color: #3fa46a;
+    color: white;
+}
+
 .store{
     padding: 0;
     margin: 0;
+    color: #3fa46a;
+    font-weight: bold;
 }
 .phone {
-    font-style: bold;
+    font-style: italic;
 }
