@@ -80,34 +80,7 @@ CREATE TABLE IF NOT EXISTS `item` (
 --
 
 INSERT INTO `item` (`id`, `name`, `description`, `price`, `percentageOFF`, `imageURL`) VALUES
-<<<<<<< HEAD
-(1, 'Apples', 'Price is per apple', 0.70, 0.00, NULL),
-(2, 'Oranges', 'Price is per orange', 0.70, 0.02, NULL),
-(3, 'Carrots', 'Price is per carrot', 0.20, 0.00, NULL),
-(4, 'Potatoes', 'Price is per potato', 1.00, 0.10, NULL),
-(5, 'Milk', 'Not Available', 3.50, 0.05, NULL),
-(6, 'Cheese', 'Not Available', 4.00, 0.05, NULL),
-(7, 'Chocolate Milk', 'Not Available', 5.00, 0.15, NULL),
-(8, 'Bread', 'Not Available', 1.90, 0.00, 'https://xantilicious.com/wp-content/uploads/2017/07/for-site-2.jpg'),
-(9, 'Rolls', 'Not Available', 1.00, 0.00, NULL),
-(10, 'Frozen Pizza', 'Not Available', 7.00, 0.00, NULL),
-(11, 'Ice Cream', 'Not Available', 5.00, 0.05, NULL),
-(12, 'Popsicles', 'Not Available', 3.50, 0.00, NULL),
-(13, 'Chips', 'Not Available', 2.00, 0.02, NULL),
-(14, 'Brownies', 'Not Available', 3.00, 0.05, NULL),
-(15, 'Donuts', 'Not Available', 2.00, 0.00, NULL),
-(16, 'Beer', 'Not Available', 4.50, 0.01, NULL),
-(17, 'Soft Drinks', 'Not Available', 1.50, 0.00, NULL),
-(18, 'Jeans', 'Not Available', 30.00, 0.02, NULL),
-(19, 'T-Shirts', 'Not Available', 25.00, 0.02, NULL),
-(20, 'Jackets', 'Not Available', 45.00, 0.05, NULL),
-(21, 'Dresses', 'Not Available', 45.00, 0.03, NULL),
-(22, 'Long-Sleeve Shirts', 'Not Available', 20.00, 0.00, NULL),
-(23, 'Video Games','Not Available', 79.99, 0.00, NULL),
-(24, 'DVDS', 'Not Available', 15.00, 0.02, NULL),
-(25, 'Tvs', 'Not Available', 1999.99, 0.02, NULL),
-(26, 'Computers', 'Not Available', 2500.00, 0.02, NULL);
-=======
+
 (1, 'Apples', 'Price is per apple. The best apples in the US', 0.70, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0000000004129.jpg'),
 (2, 'Oranges', 'Price is per orange. The best oranges in the US', 0.70, 0.02, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0000000094012.jpg'),
 (3, 'Carrots', 'Price is per carrot. The best carrots in the US', 0.20, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0003338366001.jpg'),
@@ -134,7 +107,7 @@ INSERT INTO `item` (`id`, `name`, `description`, `price`, `percentageOFF`, `imag
 (24, 'DVDS', 'Price is per piece.', 15.00, 0.02, 'https://images-americanas.b2w.io/produtos/01/00/item/298/7/298736G1.jpg'),
 (25, 'Tvs','Price is per piece.', 1999.99, 0.02, 'https://i5.walmartimages.ca/images/Enlarge/046/480/6000200046480.jpg'),
 (26, 'Computers', 'Price is per piece.', 2500.00, 0.02, 'https://images-americanas.b2w.io/produtos/01/00/img/42466/1/42466177_1SZ.jpg');
->>>>>>> 9626e1b3b0abe551a08e2e1464e4c44c4c8b334e
+
 
 -- --------------------------------------------------------
 
