@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -8,27 +8,29 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BrowseHomeComponent implements OnInit {
 
-  categories: any;
-  items: any;
+  categories: any = [];
+  items: any = [];
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getAllItems().subscribe((response: any) => {this.items = response;});
     this.getCategories().subscribe((response: any) => {this.categories = response;});
+  }
+
+  getAllItems() {
+    return this.http.get('http://localhost:8080/api/items');
   }
 
   getCategories() {
     return this.http.get('http://localhost:8080/api/categories');
   }
 
-  // TO-DO: update UI for filtered items
-  getItemsInCategory(categoryId: number) {
-    this.http.get('http://localhost:8080/api/' + categoryId).subscribe((response: any) => {this.items = response;});
-    console.log(this.items);
+  getSaleItems() {
+    this.http.get('http://localhost:8080/api/sales').subscribe((response: any) => {this.items = response;});
   }
 
-  // TO-DO: reuse impl for sales page
-  seeAllSales(): void {
-    location.href = "/sales";
+  getItemsInCategory(categoryId: number) {
+    this.http.get('http://localhost:8080/api/' + categoryId).subscribe((response: any) => {this.items = response;});
   }
 }

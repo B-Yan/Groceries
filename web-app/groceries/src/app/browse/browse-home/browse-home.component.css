@@ -1,6 +1,9 @@
 p {
   font-family: Arial;
 }
+#sidebar {
+  padding-left: 30px;
+}
 #bannerDiv {
   margin-top: 10px;
   border: thin solid lightgrey;

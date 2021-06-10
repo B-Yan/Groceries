@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -9,22 +9,19 @@ import { Router } from '@angular/router';
   templateUrl: './item-entity.component.html',
   styleUrls: ['./item-entity.component.css']
 })
-export class ItemEntityComponent implements OnInit {
+export class ItemEntityComponent {
 
-  items: any;
+  @Input() items: any = [];
   isSale: boolean = true;
   isVisible = 'none';
 
   constructor(private http: HttpClient,private router:Router ) { }
-  ngOnInit(): void {
-    this.search().subscribe((response: any) => {this.items = response;});
-  }
-  public search() {
-    return this.http.get('http://localhost:8080/api/items'); //note this needs to be changed if diff port
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.items = changes.items.currentValue;
   }
 
   hasDiscount(item: any) {
-    
     return  item > 0 ? this.isSale = true : this.isSale = false
   }
   newPrice(item:any){
@@ -33,21 +30,13 @@ export class ItemEntityComponent implements OnInit {
 
   itVisible(item: any) {
     console.log(this.isVisible, item.percentageOFF)
-
     return  item > 0 ? this.isVisible = 'block' : this.isVisible = 'none'
-   
   }
 
-
-
-  itemDescription(itemID:number)
-  {
-  
+  itemDescription(itemID:number) {
     var url = "/items";
     this.router.navigate([url], {queryParams: {item:itemID}});
   }
-
-
 }
 
 
