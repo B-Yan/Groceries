@@ -80,6 +80,7 @@ CREATE TABLE IF NOT EXISTS `item` (
 --
 
 INSERT INTO `item` (`id`, `name`, `description`, `price`, `percentageOFF`, `imageURL`) VALUES
+<<<<<<< HEAD
 (1, 'Apples', 'Price is per apple', 0.70, 0.00, NULL),
 (2, 'Oranges', 'Price is per orange', 0.70, 0.02, NULL),
 (3, 'Carrots', 'Price is per carrot', 0.20, 0.00, NULL),
@@ -106,6 +107,34 @@ INSERT INTO `item` (`id`, `name`, `description`, `price`, `percentageOFF`, `imag
 (24, 'DVDS', 'Not Available', 15.00, 0.02, NULL),
 (25, 'Tvs', 'Not Available', 1999.99, 0.02, NULL),
 (26, 'Computers', 'Not Available', 2500.00, 0.02, NULL);
+=======
+(1, 'Apples', 'Price is per apple. The best apples in the US', 0.70, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0000000004129.jpg'),
+(2, 'Oranges', 'Price is per orange. The best oranges in the US', 0.70, 0.02, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0000000094012.jpg'),
+(3, 'Carrots', 'Price is per carrot. The best carrots in the US', 0.20, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0003338366001.jpg'),
+(4, 'Potatoes', 'Price is per potato. The best potatos in the US', 1.00, 0.10, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0006882013225.jpg'),
+(5, 'Milk','Price is per liter. The best milk in the US', 3.50, 0.05, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0005587202601.jpg'),
+(6, 'Cheese','Price is per kilo. The best cheese in the US', 4.00, 0.05, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0006914310272.jpg'),
+(7, 'Chocolate Milk', 'Price is per liter. The best milk in the US', 5.00, 0.15, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0005587209401.jpg'),
+(8, 'Bread', 'Price is per bag. The best bread in the US', 1.90, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0006107777124.jpg'),
+(9, 'Rolls', 'Price is per box. The best roll in the US', 1.00, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0006945901204.jpg'),
+(10, 'Frozen Pizza', 'Price is per box. The best pizza in the US', 7.00, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0062845659022.jpg'),
+(11, 'Ice Cream', 'Price is per Bowl. The best ice cream in the US', 5.00, 0.05, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0005500097154.jpg'),
+(12, 'Popsicles', 'Price is per box.', 3.50, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0005877957826.jpg'),
+(13, 'Chips', 'Price is per bag.', 2.00, 0.02, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0072822914039.jpg'),
+(14, 'Brownies', 'Price is per box.', 3.00, 0.05, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0006073705105.jpg'),
+(15, 'Donuts', 'Price is per box.', 2.00, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0029825900000.jpg'),
+(16, 'Beer', 'Price is per can.', 4.50, 0.01, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0005632701116.jpg'),
+(17, 'Soft Drinks', 'Price is per can.', 1.50, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0006900000982.jpg'),
+(18, 'Jeans', 'Price is per piece.', 30.00, 0.02, 'https://i5.walmartimages.ca/images/Enlarge/298/744/6000202298744.jpg'),
+(19, 'T-Shirts', 'Price is per piece.', 25.00, 0.02, 'https://i5.walmartimages.ca/images/Enlarge/683/375/6000202683375.jpg'),
+(20, 'Jackets', 'Price is per piece.', 45.00, 0.05, 'https://i5.walmartimages.ca/images/Enlarge/594/869/6000202594869.jpg'),
+(21, 'Dresses', 'Price is per piece.', 45.00, 0.03, 'https://i5.walmartimages.ca/images/Enlarge/345/942/6000203345942.jpg'),
+(22, 'Long-Sleeve Shirts', 'Price is per piece.', 20.00, 0.00, 'https://images-americanas.b2w.io/produtos/01/00/sku/119300/4/119300481SZ.jpg'),
+(23, 'Video Games', 'Price is per piece.', 79.99, 0.00, 'https://i5.walmartimages.ca/images/Enlarge/031/861/6000199031861.jpg'),
+(24, 'DVDS', 'Price is per piece.', 15.00, 0.02, 'https://images-americanas.b2w.io/produtos/01/00/item/298/7/298736G1.jpg'),
+(25, 'Tvs','Price is per piece.', 1999.99, 0.02, 'https://i5.walmartimages.ca/images/Enlarge/046/480/6000200046480.jpg'),
+(26, 'Computers', 'Price is per piece.', 2500.00, 0.02, 'https://images-americanas.b2w.io/produtos/01/00/img/42466/1/42466177_1SZ.jpg');
+>>>>>>> 9626e1b3b0abe551a08e2e1464e4c44c4c8b334e
 
 -- --------------------------------------------------------
 

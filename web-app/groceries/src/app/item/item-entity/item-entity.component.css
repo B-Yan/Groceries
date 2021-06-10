@@ -2,20 +2,66 @@
   color:#000;
 }
 
-.card-price-disc{ color: rgb(218, 50, 50);}
+.card-price-disc{ 
+  text-decoration: line-through}
+
+  .card-price-disc2{ color: rgb(218, 50, 50);
+   }
+
 
 .card-body{
     position: relative;
     cursor:pointer;
 
+/* height: 250px; */
+/* width: 300px; */
+overflow: hidden;
+/* background-color: aqua;
+padding: 5%;
+margin: 10px auto; */
 }
 .card-price-disc::before{
     position: absolute;
     top: 0;
     left: 0;
-    width: 50px;
+    width: 100px;
     content: '';
     background-color: rgb(218, 50, 50);
     height: 50px;
-    border-radius: 50px;
+    border-radius: 50px;    
+}
+
+.card-price-disc::after{
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  width: 50px;
+  /* content: 'Sale'; */
+  color: #fff;
+  /* background-color: rgb(218, 50, 50); */
+  height: 50px;
+  /* border-radius: 50px;   */
+}
+ .sale-tag{
+   position: absolute;
+   color:#fff;
+   z-index: 2;
+ }
+
+.prices-p{
+  display: flex;
+  justify-content: space-between; 
+  font-size: large;
+  font-weight: 600;
+
+}
+.image{
+  width: 100%;
+  height:auto;
+  overflow: hidden;
+}
+.card{
+  border-radius: 12px;
+padding: 5% 10%;
+margin: 10px auto;
 }
