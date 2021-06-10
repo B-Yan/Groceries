@@ -10,6 +10,7 @@ export class StoresHomeComponent implements OnInit {
   
   stores: any;
   hours: any;
+  url: string = 'http://localhost:8080/api'
 
   constructor(private http: HttpClient) { }
 
@@ -19,11 +20,11 @@ export class StoresHomeComponent implements OnInit {
   }
 
   getStores() {
-    return this.http.get('http://localhost:8080/api/stores');
+    return this.http.get(this.url +'/stores');
   }
 
   getHours(){
-    return this.http.get('http://localhost:8080/api/storeHours');
+    return this.http.get(this.url+'/storeHours');
   }
 
   storeIsOpen(storeId: number){

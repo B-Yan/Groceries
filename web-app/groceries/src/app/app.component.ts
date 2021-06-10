@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'groceries';
-  
+ 
 }
+// export const URL ='http://localhost:8090/api';
