@@ -41,9 +41,6 @@ public class ItemDaoImpl implements ItemDao
 		item.setPrice(price);
 		item.setPercentageOFF(percentageOFF);
 		return item;
-		
-		
-		
 	}
 
 	public List<ItemFormatted> getItemsByCategory(Integer categoryID) 
@@ -60,6 +57,14 @@ public class ItemDaoImpl implements ItemDao
 	    List<Item> items = jdbc.query(SELECT_ITEMS_ON_SALE,new ItemMapper());
 	    return formatItems(items);
 	}
+
+	public List<ItemFormatted> getFeaturedItemsOnSale(Integer categoryID)
+	{
+		String SELECT_FEATURED_ITEMS_ON_SALE="SELECT i.* FROM item i, itemsincategory ic WHERE i.percentageOFF!=0.00 AND i.id = ic.itemID AND ic.categoryID= ?";
+		List<Item> items = jdbc.query(SELECT_FEATURED_ITEMS_ON_SALE,new ItemMapper(), categoryID);
+		return formatItems(items);
+	}
+
 	private List<ItemFormatted> formatItems(List<Item> items)
 	{
 		List<ItemFormatted> itemsFormatted = new ArrayList<ItemFormatted>();

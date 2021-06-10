@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-browse-home',
@@ -10,12 +11,20 @@ export class BrowseHomeComponent implements OnInit {
 
   categories: any = [];
   items: any = [];
-  url: string = 'http://localhost:8090/api'
+  url: string = 'http://localhost:8080/api';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) {
+    const featuredItems = this.route.snapshot.queryParamMap.get('featuredItems');
+    if (featuredItems !== null) {
+      this.items = JSON.parse(featuredItems);
+      console.log("FEATURED ITEMS", this.items);
+    }
+  }
 
   ngOnInit(): void {
-    this.getAllItems().subscribe((response: any) => {this.items = response;});
+    if (this.items.length == 0) {
+      this.getAllItems().subscribe((response: any) => {this.items = response;});
+    }
     this.getCategories().subscribe((response: any) => {this.categories = response;});
   }
 

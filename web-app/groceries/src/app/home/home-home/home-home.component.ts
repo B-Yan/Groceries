@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { Router, NavigationExtras } from "@angular/router";
+
 
 @Component({
   selector: 'app-home-home',
@@ -7,12 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeHomeComponent implements OnInit {
 
-  constructor() { }
+  url: string = 'http://localhost:8080/api'
+
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  getSalesForType(type: string) {
-    // TO-DO
+  getFeaturedSaleItems(categoryId: number) {
+    this.http.get(this.url+'/sales/'+categoryId).subscribe((response: any) => {
+      const queryParams: any = {};
+      queryParams.featuredItems = JSON.stringify(response);
+      const navigationExtras: NavigationExtras = { queryParams };
+
+      this.router.navigate(['/browse'], navigationExtras);
+    });
   }
 }
