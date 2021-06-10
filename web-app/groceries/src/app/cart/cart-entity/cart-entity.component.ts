@@ -1,5 +1,6 @@
 import { ArrayType } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 
 @Component({
   selector: 'app-cart-entity',
@@ -7,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart-entity.component.css']
 })
 export class CartEntityComponent implements OnInit {
-
   items: any;
   itemsLength: any;
 
@@ -19,6 +19,15 @@ export class CartEntityComponent implements OnInit {
     this.items = new Array(localStorage.length);
     this.itemsLength = this.items.length;
     this.updateItems();
+  }
+
+  cartTotal(){
+    let total = 0;
+    for(let i = 0 ; i<localStorage.length; i++){
+      let item = JSON.parse(localStorage.getItem(localStorage.key(i)!)!);
+      total += item.qte*item.price;
+    }
+    return total;
   }
 
   updateItems(){
