@@ -11,13 +11,14 @@ export class ItemDescriptionEntityComponent implements OnInit {
 
   item:any;
   category:any;
+  url: string = 'http://localhost:8090/api'
   constructor(private http:HttpClient,private activatedRoute:ActivatedRoute) {
     this.activatedRoute.queryParams.subscribe(params=>{
                                                           
                                                           let itemID = params['item'];
                                                           console.log(itemID);
-                                                          this.http.get<string>("http://localhost:8080/api/itembyid/" + itemID).subscribe((response)=> { this.item=response;});
-                                                          this.http.get<string>("http://localhost:8080/api/categoryofitem/" + itemID).subscribe((response)=> {this.category=response}); 
+                                                          this.http.get<string>(this.url+"/itembyid/" + itemID).subscribe((response)=> { this.item=response;});
+                                                          this.http.get<string>(this.url+"/categoryofitem/" + itemID).subscribe((response)=> {this.category=response}); 
 
                                                       })
     

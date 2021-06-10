@@ -10,7 +10,7 @@ export class BrowseHomeComponent implements OnInit {
 
   categories: any = [];
   items: any = [];
-  url: string = 'http://localhost:8080/api'
+  url: string = 'http://localhost:8090/api'
 
   constructor(private http: HttpClient) { }
 
@@ -32,6 +32,6 @@ export class BrowseHomeComponent implements OnInit {
   }
 
   getItemsInCategory(categoryId: number) {
-    this.http.get(this.url+'/api/' + categoryId).subscribe((response: any) => {this.items = response;});
+    this.http.get(this.url+'/' + categoryId).subscribe((response: any) => {this.items = response;});
   }
 }
