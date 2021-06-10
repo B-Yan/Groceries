@@ -33,6 +33,7 @@ public class MainController
 	{
 		return itemDao.getItems();
 	}
+
 	@GetMapping(value="stores",produces="application/json")
 	public List<Store> getAllStores()
 	{
@@ -62,11 +63,13 @@ public class MainController
 	{
 		return categoryDao.getAllCategories();
 	}
+
 	@GetMapping(value="itembyid/{itemID}",produces="application/json")
 	public ItemFormatted getitemByID(@PathVariable("itemID")Integer id)
 	{
 		return itemDao.getItemByID(id);
 	}
+
 	@GetMapping(value="categoryofitem/{itemID}",produces="application/json")
 	public Category getCategoryforItem(@PathVariable("itemID") Integer id)
 	{

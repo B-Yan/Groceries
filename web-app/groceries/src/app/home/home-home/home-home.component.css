@@ -1,47 +1,10 @@
-p {
-  font-family: Arial;
-}
-#bannerDiv {
-  margin-top: 10px;
-  border: thin solid lightgrey;
-}
-#banner {
-  margin-top: 60px;
-  margin-bottom: 50px;
-  border: thin solid lightgrey;
-  width: 800px;
-}
-#bannerContent {
-  margin-left: 50px;
-}
-#bannerTitle {
-  font-family: "Marker Felt";
-}
-#allSalesButton {
-  height: 45px;
-  width: 125px;
-}
-#saleGroups {
-  display: flex;
-  justify-content: center;
-}
-.saleDiv {
-  padding: 100px;
-  text-align: center;
-}
-.btn-circle.btn-md {
-  width: 50px;
-  height: 50px;
-  padding: 7px 10px;
-  border-radius: 25px;
-  font-size: 10px;
-  text-align: center;
-}
-.btn-circle.btn-xl {
-  width: 200px;
-  height: 200px;
-  padding: 10px 16px;
-  border-radius: 100px;
-  font-size: 12px;
-  text-align: center;
+#bannerimage {
+  width: 100%;
+  background-image: url(https://image.freepik.com/free-photo/colorful-healthy-unhealthy-food-white-textured-background_23-2147885658.jpg);
+  background-repeat:no-repeat;
+  background-color: grey;
+  background-size:cover;
+  padding-top:500px;
+  height: 405px;
+  background-position: center;
 }

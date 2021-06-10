@@ -5,6 +5,17 @@
     height:200px;
     text-align:center;
 }
+<<<<<<< HEAD
+=======
+
+.boxProp
+{
+    color:green;
+    width:500px;
+    height:200px;
+    text-align:center;
+}
+>>>>>>> d4e8265dfaaafb491ab85008b1008a5cb72a1f6a
 .changeButtonColor
 {
     background-color:green;

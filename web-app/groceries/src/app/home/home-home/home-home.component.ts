@@ -11,13 +11,4 @@ export class HomeHomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  seeAllSales(): void {
-    location.href = "/sales";
-  }
-
-  // filter sales based on group string
-  seeSalesGroup(group: string): void {
-
-  }
 }

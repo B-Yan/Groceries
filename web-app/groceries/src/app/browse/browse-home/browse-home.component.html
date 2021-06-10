@@ -1,36 +1,25 @@
-<div class="container-fluid">
-  <div id="bannerDiv">
-    <div id="banner" class="jumbotron">
-      <div id="bannerContent">
-        <h1 id="bannerTitle">SAVINGS FOR THE SUMMER</h1>
-        <p>There's no better time than summer to give new staples a whirl. Try these summer
-          favorites like cauliflower hash browns, Beyond Burger patties, dairy-free yogurt and more.</p>
-        <button type="button"  id="allSalesButton" class="btn btn-success" (click)="seeAllSales()">
-          See all sales
-        </button><br><br>
-      </div>
-    </div>
-  </div>
-</div>
-<br>
 <div class="wrapper">
   <!-- Sidebar -->
   <nav id="sidebar">
+    <br><br>
     <ul class="list-unstyled components">
-      <h3>Browse</h3>
+      <h3 style="border-bottom-style: solid;">Browse</h3><br>
       <p>Category</p>
       <div *ngFor="let category of categories" class="entry">
         <li>
           <button type="button"  id="getCategoryButton" class="btn btn-success" (click)="getItemsInCategory(category.id)">{{category.name}}</button>
         </li>
       </div>
+      <li>
+        <button type="button"  id="getCategoryButton" class="btn btn-success" (click)="getSaleItems()">SALE</button>
+      </li>
     </ul>
   </nav>
   <!-- Page Content -->
   <div id="content">
     <div class="container-fluid">
       <div id="contentItems" class="row">
-        <app-item-entity></app-item-entity>
+        <app-item-entity [items]="items"></app-item-entity>
       </div>
     </div>
   </div>
