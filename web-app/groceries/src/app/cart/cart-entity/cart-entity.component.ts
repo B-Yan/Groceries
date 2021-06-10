@@ -9,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class CartEntityComponent implements OnInit {
 
   items: any;
+  itemsLength: any;
 
   constructor() { }
+
+  //TODO add the cost of each product, add the total cost per product, add the cart total and a paypal link
 
   ngOnInit(): void {
     let item1 = {id: 0, name: 'banana', qte: 1};
@@ -22,13 +25,36 @@ export class CartEntityComponent implements OnInit {
     localStorage.setItem(item3.id+"", JSON.stringify(item3));
 
     this.items = new Array(localStorage.length);
+    this.itemsLength = this.items.length;
+    this.updateItems();
+  }
+
+  updateItems(){
     for(let i = 0 ; i<localStorage.length; i++){
       this.items[i] = JSON.parse(localStorage.getItem(localStorage.key(i)!)!);
     }
   }
 
-  myString(item: any){
-    return item;
+  add(itemId: number){
+    let newItem = JSON.parse(localStorage.getItem(itemId+"")!);
+    newItem.qte++;
+    localStorage.setItem(newItem.id+"", JSON.stringify(newItem));
+    this.updateItems();
+  }
+
+  remove(itemId: number){
+    let newItem = JSON.parse(localStorage.getItem(itemId+"")!);
+    newItem.qte--;
+    localStorage.setItem(newItem.id+"", JSON.stringify(newItem));
+    if (newItem.qte == 0){this.delete(itemId);}
+    this.updateItems();
+  }
+
+  delete(itemId: number){
+    localStorage.removeItem(itemId+"");
+    this.itemsLength--;
+    this.items[this.itemsLength] = null;
+    this.updateItems();
   }
 
 }
