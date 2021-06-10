@@ -15,11 +15,11 @@
   justify-content: center;
   align-items: center;
 }
-#top_part {
+#section {
   width:100%;
   border:2vh solid #fff;
 }
-#top_part tr td{
+#section tr td{
   width:50%;
 }
 #about {
@@ -43,7 +43,7 @@
   width:20% !important;
   text-align:left;
 }
-.btn_one {
+.seeDealsButton {
   font-size:18px;
   font-family: 'Poppins', sans-serif;
   color:white;
@@ -56,7 +56,7 @@
   margin:2vh 0px;
   transition:0.4s ease-in-out;
 }
-.btn_one:hover {
+.seeDealsButton:hover {
   box-shadow:0px 10px 30px #3fa46a;
   cursor:pointer;
   color:#fff;
