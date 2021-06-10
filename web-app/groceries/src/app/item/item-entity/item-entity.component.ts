@@ -37,6 +37,12 @@ export class ItemEntityComponent {
     var url = "/items";
     this.router.navigate([url], {queryParams: {item:itemID}});
   }
+  addToCart(iid: number, iname: string, iprice: number, percentageOFF: number){
+    let jprice = iprice * (1-percentageOFF);
+    let item = {id: iid, name: iname, qte: 1, price: jprice};
+    localStorage.setItem(iid+"", JSON.stringify(item));
+    alert(iname + " has been added to cart!");
+  }
 }
 
 

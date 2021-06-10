@@ -1,3 +1,31 @@
-<div id="bannerimage">
+<div class="center">
+  <h1 id="banner">SUMMER SAVINGS</h1><br>
+  <p>	There’s no better time than summer to give new staples a whirl. Try these summer 	favorites like cauliflower hash browns, Beyond Burger patties, dairy-free yogurt and more!</p>
 </div>
-<!--TO-DO-->
+<table id="top_part">
+  <tr>
+    <td id="about" class="animated slideInLeft" style="animation-delay:2s;">
+      <h1>All Beyond Meat Products 25% off!</h1>
+      <button class="btn_one" (click)="getSalesForType('meat')">See deals</button><br>
+    </td>
+    <td id="img1" class="animated jackInTheBox" style="animation-delay:2.2s;"></td>
+  </tr>
+</table>
+<table id="top_part">
+  <tr>
+    <td id="img2" class="animated jackInTheBox" style="animation-delay:2.2s;"></td>
+    <td id="about" class="animated slideInLeft" style="animation-delay:2s;">
+      <h1>Vegetarian and Vegan items 25% off!</h1>
+      <button class="btn_one" (click)="getSalesForType('veg')">See deals</button><br>
+    </td>
+  </tr>
+</table>
+<table id="top_part">
+  <tr>
+    <td id="about" class="animated slideInLeft" style="animation-delay:2s;">
+      <h1>Fridays only! A hot pizza deal. Exclusions apply.</h1>
+      <button class="btn_one" (click)="getSalesForType('pizza')">See deals</button><br>
+    </td>
+    <td id="img3" class="animated jackInTheBox" style="animation-delay:2.2s;"></td>
+  </tr>
+</table>

@@ -18,6 +18,9 @@
                             [style.display]="itVisible(item.percentageOFF)">{{newPrice(item)| currency: 'CAD' : '$' }}
                         </p>
                     </div>
+                    <button class="btn btn-primary changeButtonColor" (click)="addToCart(item.id, item.name, item.price, item.percentageOFF)">Add to Cart</button>
+
+                    <!-- <app-cart-entity></app-cart-entity> -->
                 </div>
             </div>
         </div>

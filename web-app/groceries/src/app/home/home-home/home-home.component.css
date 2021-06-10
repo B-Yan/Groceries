@@ -1,10 +1,102 @@
-#bannerimage {
-  width: 100%;
-  background-image: url(https://image.freepik.com/free-photo/colorful-healthy-unhealthy-food-white-textured-background_23-2147885658.jpg);
-  background-repeat:no-repeat;
-  background-color: grey;
-  background-size:cover;
-  padding-top:500px;
-  height: 405px;
-  background-position: center;
+#banner {
+  display: flex;
+  font-family: "Brush Script MT";
+  font-size: 100px;
+  color: white;
+  padding-bottom:40px;
 }
+.center {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  background-image: url(https://static.vecteezy.com/system/resources/previews/001/229/304/non_2x/box-of-groceries-on-yellow-background-free-photo.jpg);
+  background-size:cover;
+  justify-content: center;
+  align-items: center;
+}
+#top_part {
+  width:100%;
+  border:2vh solid #fff;
+}
+#top_part tr td{
+  width:50%;
+}
+#about {
+  width:84% !important;
+  height:95vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:left;
+  padding:0px 8%;
+}
+#about h1 {
+  font-size:45px;
+  word-wrap:break-word;
+}
+#about table {
+  width:70%;
+  margin-top:4vh;
+}
+#about table tr td {
+  width:20% !important;
+  text-align:left;
+}
+.social {
+  color:rgb(255, 44, 90);
+  font-size:23px;
+  padding:12px 17px;
+  border-radius:50%;
+  background:transparent;
+  transition:0.4s ease-in-out;
+  font-weight:bold;
+  margin:0px 8px;
+}
+.social:hover {
+  cursor: pointer;
+  color:#fff;
+  background:rgb(255, 44, 90);
+  box-shadow:0px 10px 30px rgba(255, 66, 107,0.8);
+}
+.btn_one {
+  font-size:18px;
+  font-family: 'Poppins', sans-serif;
+  color:rgb(255, 44, 90);
+  background:#fff;
+  border:3px solid rgb(255, 44, 90);
+  padding:8px 40px;
+  width:45%;
+  border-radius:80px;
+  font-weight:bold;
+  margin:2vh 0px;
+  transition:0.4s ease-in-out;
+}
+.btn_one:hover {
+  box-shadow:0px 10px 30px rgba(255, 44, 90, 0.8);
+  cursor:pointer;
+  color:#fff;
+  background:rgb(255, 44, 90);
+}
+#img1 {
+  width:100%;
+  height:95vh;
+  background:url("https://cdn9.dissolve.com/p/D1334_5_923/D1334_5_923_1200.jpg") center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+#img2 {
+  width:100%;
+  height:95vh;
+  background:url("https://www.liveeatlearn.com/wp-content/uploads/2015/05/white-sauce-pizza-goat-cheese-mushroom-11.jpg") center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+#img3 {
+  width:100%;
+  height:95vh;
+  background:url("https://post.healthline.com/wp-content/uploads/2020/09/whole-food-foods-healthy-vegetables-eggs-ingredients-732x549-thumbnail.jpg") center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
