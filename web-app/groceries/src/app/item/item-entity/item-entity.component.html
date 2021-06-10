@@ -4,7 +4,7 @@
         <div class="col-md-4 col-xs-6" *ngFor="let item of items">
             <div class="card">
                 <div class="card-body">
-                    <label class="sale-tag">Sales {{item.percentageOFF*100}}%</label>
+                    <label class="sale-tag"  [style.display]="itVisible(item.percentageOFF)">Sales {{item.percentageOFF*100}}%</label>
                     <div class="image">
                         <img src={{item.url}} alt="alternatetext" class="img-fluid">
                     </div>
