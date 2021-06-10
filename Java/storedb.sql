@@ -83,8 +83,8 @@ INSERT INTO `item` (`id`, `name`, `description`, `price`, `percentageOFF`, `imag
 
 (1, 'Apples', 'Price is per apple. The best apples in the US', 0.70, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0000000004129.jpg'),
 (2, 'Oranges', 'Price is per orange. The best oranges in the US', 0.70, 0.02, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0000000094012.jpg'),
-(3, 'Carrots', 'Price is per carrot. The best carrots in the US', 0.20, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0003338366001.jpg'),
-(4, 'Potatoes', 'Price is per potato. The best potatos in the US', 1.00, 0.10, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0006882013225.jpg'),
+(3, 'Carrots', 'Price is per carrot. The best carrots in the US', 0.20, 0.25, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0003338366001.jpg'),
+(4, 'Potatoes', 'Price is per potato. The best potatos in the US', 1.00, 0.25, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0006882013225.jpg'),
 (5, 'Milk','Price is per liter. The best milk in the US', 3.50, 0.05, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0005587202601.jpg'),
 (6, 'Cheese','Price is per kilo. The best cheese in the US', 4.00, 0.05, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0006914310272.jpg'),
 (7, 'Chocolate Milk', 'Price is per liter. The best milk in the US', 5.00, 0.15, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0005587209401.jpg'),
