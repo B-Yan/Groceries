@@ -11,4 +11,8 @@ export class HomeHomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  getSalesForType(type: string) {
+    // TO-DO
+  }
 }
