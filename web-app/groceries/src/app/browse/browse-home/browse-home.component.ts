@@ -32,6 +32,6 @@ export class BrowseHomeComponent implements OnInit {
   }
 
   getItemsInCategory(categoryId: number) {
-    this.http.get(this.url+'/api/' + categoryId).subscribe((response: any) => {this.items = response;});
+    this.http.get(this.url+'/' + categoryId).subscribe((response: any) => {this.items = response;});
   }
 }

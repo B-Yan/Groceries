@@ -7,14 +7,14 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./stores-home.component.css']
 })
 export class StoresHomeComponent implements OnInit {
-  
+
   stores: any;
   hours: any;
   url: string = 'http://localhost:8080/api'
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {  
+  ngOnInit(): void {
     this.getStores().subscribe((response: any) => {this.stores = response;});
     this.getHours().subscribe((response: any) => {this.hours = response;});
   }
