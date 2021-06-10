@@ -13,7 +13,7 @@ export class CartEntityComponent implements OnInit {
 
   constructor() { }
 
-  //TODO add the cost of each product, add the total cost per product, add the cart total and a paypal link
+  //TODO better verification of the data type before displaying info and before adding values
 
   ngOnInit(): void {
     this.items = new Array(localStorage.length);
