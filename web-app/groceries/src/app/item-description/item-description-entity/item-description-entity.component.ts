@@ -11,7 +11,7 @@ export class ItemDescriptionEntityComponent implements OnInit {
 
   item:any;
   category:any;
-  url: string = 'http://localhost:8080/api'
+  url: string = 'http://localhost:8090/api'
   constructor(private http:HttpClient,private activatedRoute:ActivatedRoute, private router:Router) {
     this.activatedRoute.queryParams.subscribe(params=>{
                                                           
