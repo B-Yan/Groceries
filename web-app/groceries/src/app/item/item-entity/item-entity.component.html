@@ -8,7 +8,7 @@
                     <div class="image">
                         <img src={{item.url}} alt="alternatetext" class="img-fluid">
                     </div>
-                    <h4 class="card-title">{{ item.name }}</h4>
+                    <h4 (click)="itemDescription(item.id)" class="card-title">{{ item.name }}</h4>
                     <div class="prices-p">
                        
                         <p class="card-price" [class.card-price-disc]="hasDiscount(item.percentageOFF)">{{ item.price|
