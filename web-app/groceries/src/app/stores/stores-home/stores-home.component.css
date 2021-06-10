@@ -4,13 +4,15 @@
     min-width: fit-content;
     padding: 1%;
     margin: 0;
-    margin-left:1%;
+}
+
+.paddingAround{
+    margin: 1%;
 }
 
 .title{
     background-color: #3fa46a;
     color: white;
-    margin-top: 1%;
 }
 
 .store{
