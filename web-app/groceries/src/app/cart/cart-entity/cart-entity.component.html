@@ -1,15 +1,22 @@
 <h2>Your cart</h2>
-<div *ngIf="items[0] == null">
-    Your cart is empty!
-</div>
 <div *ngFor="let item of items">
     <div *ngIf="item != null" class="cartItem">
-    <div class="content">{{item.name}}</div>
+    <div class="content"><div>{{item.name}}</div><div>{{item.price | currency}}/unit</div></div>
     <div class="content">
-        <span class="counter">
+        <div><span class="counter">
             <button (click)="add(item.id)">+</button><span class="qte"> {{item.qte}} </span><button (click)="remove(item.id)">-</button>
         </span>
         <button (click)="delete(item.id)">Delete</button>
+        </div>
+        <div>
+            Total {{(item.price * item.qte) | currency}}
+        </div>
     </div>
     </div>
+</div>
+<h3 *ngIf="items[0] == null">
+    Your cart is empty!
+</h3>
+<div *ngIf="items[0] != null">
+    <h3>Cart total {{cartTotal() | currency}}</h3>
 </div>
