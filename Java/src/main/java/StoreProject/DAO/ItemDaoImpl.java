@@ -25,6 +25,26 @@ public class ItemDaoImpl implements ItemDao
 		return formatItems(items);
 
 	}
+	public ItemFormatted getItemByID(int itemID)
+	{
+		String GET_ITEM_BY_ID="SELECT * FROM item WHERE id=?";
+		Item i = jdbc.queryForObject(GET_ITEM_BY_ID, new ItemMapper(),itemID);
+		ItemFormatted item=new ItemFormatted();
+		//format item
+		DecimalFormat df = new DecimalFormat("0.00");
+		item.setId(i.getId());
+		item.setName(i.getName());
+		item.setDescription(i.getDescription());
+		item.setUrl(i.getUrl());
+		String price = df.format(i.getPrice());
+		String percentageOFF = df.format(i.getPercentageOFF());
+		item.setPrice(price);
+		item.setPercentageOFF(percentageOFF);
+		return item;
+		
+		
+		
+	}
 
 	public List<ItemFormatted> getItemsByCategory(Integer categoryID) 
 	{

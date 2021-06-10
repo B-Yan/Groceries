@@ -33,6 +33,13 @@ public class CategoryDaoImpl implements CategoryDao
 			return null;
 		}
 	}
+
+	public Category getCategoryForItem(int itemID) 
+	{
+		final String SELECT_CATEGORY_FOR_ITEM="SELECT c.* FROM category c,itemsincategory ic,item i WHERE c.id=ic.categoryID AND ic.itemID=i.id AND i.id=?";
+		return jdbc.queryForObject(SELECT_CATEGORY_FOR_ITEM, new CategoryMapper(), itemID);
+		
+	}
 	
 	
 	

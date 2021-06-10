@@ -28,6 +28,7 @@ import { MenuEntityComponent } from './menu/menu-entity/menu-entity.component';
     BrowseModule,
     BrowserModule,
     CartModule
+
   ],
 
 

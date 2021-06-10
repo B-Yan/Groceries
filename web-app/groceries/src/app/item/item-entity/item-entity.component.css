@@ -6,6 +6,7 @@
 
 .card-body{
     position: relative;
+    cursor:pointer;
 
 }
 .card-price-disc::before{

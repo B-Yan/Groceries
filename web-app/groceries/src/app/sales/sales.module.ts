@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SalesRoutingModule } from './sales-routing.module';
 import { SalesHomeComponent } from './sales-home/sales-home.component';
+import { ActivatedRoute } from '@angular/router';
 
 
 @NgModule({

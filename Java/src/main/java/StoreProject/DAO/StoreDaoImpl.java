@@ -48,8 +48,6 @@ public class StoreDaoImpl implements StoreDao
 			String hoursString = stores.get(i).getHours();
 			System.out.println(hoursString);
 			String[] splitHours = hoursString.split("/");
-			System.out.println("First Element: " + splitHours[0]);
-			System.out.println("Size of first split: " + splitHours.length);
 			StoreHours s = new StoreHours();
 			s.setId(stores.get(i).getId());
 			for(int j=0;j<splitHours.length;j++)
@@ -57,7 +55,6 @@ public class StoreDaoImpl implements StoreDao
 				MyTime t = new MyTime();
 				String hour = splitHours[j];
 				String[] splitData = hour.split(",");
-				System.out.println("Size: " + splitData.length);
 				t.setDay(Integer.parseInt(splitData[0]));
 				t.setOpen(splitData[1]);
 				t.setClose(splitData[2]);
