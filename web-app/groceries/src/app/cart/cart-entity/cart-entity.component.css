@@ -20,7 +20,7 @@ h3{
     margin: 0.5%;
     padding-left: 1%;
     padding-right: 2%;
-    border: black solid 1px;
+    border: lightgray solid 1px;
     width: 30%;
     min-width: fit-content;
     display: flex;

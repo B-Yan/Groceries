@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-item-description-entity',
@@ -11,8 +11,8 @@ export class ItemDescriptionEntityComponent implements OnInit {
 
   item:any;
   category:any;
-  url: string = 'http://localhost:8090/api'
-  constructor(private http:HttpClient,private activatedRoute:ActivatedRoute) {
+  url: string = 'http://localhost:8080/api'
+  constructor(private http:HttpClient,private activatedRoute:ActivatedRoute, private router:Router) {
     this.activatedRoute.queryParams.subscribe(params=>{
                                                           
                                                           let itemID = params['item'];
@@ -29,6 +29,7 @@ export class ItemDescriptionEntityComponent implements OnInit {
     let item = {id: iid, name: iname, qte: 1, price: jprice};
     localStorage.setItem(iid+"", JSON.stringify(item));
     alert(iname + " has been added to cart!");
+    this.router.navigate(['/browse']);
   }
 
   ngOnInit(): void 

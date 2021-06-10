@@ -3,7 +3,8 @@
     <div class="row" style="margin-top:30px">
         <div class="col-md-4 col-xs-6" *ngFor="let item of items">
             <div class="card">
-                <div (click)="itemDescription(item.id)" class="card-body">
+                <div class="card-body">
+                    <span (click)="itemDescription(item.id)">
                     <label class="sale-tag"  [style.display]="itVisible(item.percentageOFF)">Sales {{item.percentageOFF*100}}%</label>
                     <div class="image">
                         <img src={{item.url}} alt="alternatetext" class="img-fluid">
@@ -18,6 +19,7 @@
                             [style.display]="itVisible(item.percentageOFF)">{{newPrice(item)| currency: 'CAD' : '$' }}
                         </p>
                     </div>
+                    </span>
                     <button class="btn btn-primary changeButtonColor" (click)="addToCart(item.id, item.name, item.price, item.percentageOFF)">Add to Cart</button>
 
                     <!-- <app-cart-entity></app-cart-entity> -->
