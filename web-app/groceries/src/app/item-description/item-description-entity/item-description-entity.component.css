@@ -4,3 +4,15 @@
     width:500px;
     text-align:center;
 }
+
+.boxProp
+{
+    color:green;
+    width:500px;
+    height:200px;
+    text-align:center;
+}
+.changeButtonColor
+{
+    background-color:green;
+}

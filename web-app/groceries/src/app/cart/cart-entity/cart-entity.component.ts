@@ -16,14 +16,6 @@ export class CartEntityComponent implements OnInit {
   //TODO add the cost of each product, add the total cost per product, add the cart total and a paypal link
 
   ngOnInit(): void {
-    let item1 = {id: 0, name: 'banana', qte: 1};
-    let item2 = {id: 1, name: 'mapple syrup', qte: 20};
-    let item3 = {id: 2, name: 'poutine', qte: 1};
-
-    localStorage.setItem(item1.id+"", JSON.stringify(item1));
-    localStorage.setItem(item2.id+"", JSON.stringify(item2));
-    localStorage.setItem(item3.id+"", JSON.stringify(item3));
-
     this.items = new Array(localStorage.length);
     this.itemsLength = this.items.length;
     this.updateItems();

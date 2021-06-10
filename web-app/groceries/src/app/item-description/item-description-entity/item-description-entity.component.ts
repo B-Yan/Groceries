@@ -23,6 +23,13 @@ export class ItemDescriptionEntityComponent implements OnInit {
     
   }
 
+  addToCart(iid: number, iname: string, iprice: number, percentageOFF: number){
+    let jprice = iprice * (1-percentageOFF);
+    let item = {id: iid, name: iname, qte: 1, price: jprice};
+    localStorage.setItem(iid+"", JSON.stringify(item));
+    alert(iname + " has been added to cart!");
+  }
+
   ngOnInit(): void 
   {
     /*
