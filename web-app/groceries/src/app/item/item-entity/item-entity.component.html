@@ -1,12 +1,23 @@
 <div class="container">
     <h2 class="text-center bg-success text-white"></h2>
     <div class="row" style="margin-top:30px">
-        <div class="col-md-3 col-xs-6" *ngFor="let item of items">
+        <div class="col-md-4 col-xs-6" *ngFor="let item of items">
             <div class="card">
                 <div class="card-body">
-                    <img src={{item.url}} alt="alternatetext" class="img-fluid">
-                    <h3 class="card-title">{{ item.name }}</h3>
-                    <p class="card-price" [class.card-price-disc]="hasDiscount(item.percentageOFF)">{{ item.price| currency: 'CAD' : '$' }}</p>                   
+                    <label class="sale-tag">Sales {{item.percentageOFF*100}}%</label>
+                    <div class="image">
+                        <img src={{item.url}} alt="alternatetext" class="img-fluid">
+                    </div>
+                    <h4 class="card-title">{{ item.name }}</h4>
+                    <div class="prices-p">
+                       
+                        <p class="card-price" [class.card-price-disc]="hasDiscount(item.percentageOFF)">{{ item.price|
+                            currency: 'CAD' : '$' }}</p>
+                        <p id="sales-price" class="card-priceSale"
+                            [class.card-price-disc2]="hasDiscount(item.percentageOFF)"
+                            [style.display]="itVisible(item.percentageOFF)">{{newPrice(item)| currency: 'CAD' : '$' }}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
