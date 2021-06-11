@@ -12,7 +12,7 @@ export class CartEntityComponent implements OnInit {
   items: any;
   itemsLength: any;
   salesId: any;
-  url: string = 'http://localhost:8080/api/newSale';
+  url: string = 'http://localhost:8090/api/newSale';
 
 
   constructor(private http: HttpClient) { }
