@@ -10,7 +10,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartEntityComponent implements OnInit {
   items: any;
-  itemsLength: any;
   salesId: any;
   url: string = 'http://localhost:8090/api/newSale';
 
@@ -21,7 +20,6 @@ export class CartEntityComponent implements OnInit {
 
   ngOnInit(): void {
     this.items = new Array();
-    this.itemsLength = this.items.length;
     this.updateItems();
     this.getId().subscribe((response: any) => {this.salesId = response;});
   }
@@ -54,8 +52,12 @@ export class CartEntityComponent implements OnInit {
   }
 
   updateItems(){
+    this.items = new Array();
     for(let i = 0 ; i<localStorage.length; i++){
-      this.items[i] = JSON.parse(localStorage.getItem(localStorage.key(i)!)!);
+      let val = JSON.parse(localStorage.getItem(localStorage.key(i)!)!);
+      if(val.qte != undefined){
+        this.items.push(val);
+      }
     }
   }
 
@@ -76,8 +78,6 @@ export class CartEntityComponent implements OnInit {
 
   delete(itemId: number){
     localStorage.removeItem(itemId+"");
-    this.itemsLength--;
-    this.items[this.itemsLength] = null;
     this.updateItems();
   }
 
