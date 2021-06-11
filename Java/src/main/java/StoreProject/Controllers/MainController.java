@@ -60,6 +60,12 @@ public class MainController
 		return itemDao.getItemsOnSale();
 	}
 
+	@GetMapping(value="sales/{categoryID}",produces="application/json")
+	public List<ItemFormatted> getFeaturedItemsOnSale(@PathVariable("categoryID") Integer categoryID)
+	{
+		return itemDao.getFeaturedItemsOnSale(categoryID);
+	}
+
 	@GetMapping(value="categories",produces="application/json")
 	public List<Category> getAllCategories()
 	{

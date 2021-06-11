@@ -47,7 +47,7 @@ INSERT INTO item (id, name, description, price, percentageOFF, imageURL) VALUES
 (8, 'Bread', 'Price is per bag. The best bread in the US', 1.90, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0006107777124.jpg'),
 (9, 'Rolls', 'Price is per box. The best roll in the US', 1.00, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0006945901204.jpg'),
 (10, 'Frozen Pizza', 'Price is per box. The best pizza in the US', 7.00, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0062845659022.jpg'),
-(11, 'Ice Cream', 'Price is per Bowl. The best ice cream in the US', 5.00, 0.05, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0005500097154.jpg'),
+(11, 'Ice Cream', 'Price is per Bowl. The best ice cream in the US', 5.00, 0.25, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0005500097154.jpg'),
 (12, 'Popsicles', 'Price is per box.', 3.50, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0005877957826.jpg'),
 (13, 'Chips', 'Price is per bag.', 2.00, 0.02, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0072822914039.jpg'),
 (14, 'Brownies', 'Price is per box.', 3.00, 0.05, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0006073705105.jpg'),
@@ -55,14 +55,14 @@ INSERT INTO item (id, name, description, price, percentageOFF, imageURL) VALUES
 (16, 'Beer', 'Price is per can.', 4.50, 0.01, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0005632701116.jpg'),
 (17, 'Soft Drinks', 'Price is per can.', 1.50, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0006900000982.jpg'),
 (18, 'Jeans', 'Price is per piece.', 30.00, 0.02, 'https://i5.walmartimages.ca/images/Enlarge/298/744/6000202298744.jpg'),
-(19, 'T-Shirts', 'Price is per piece.', 25.00, 0.02, 'https://i5.walmartimages.ca/images/Enlarge/683/375/6000202683375.jpg'),
+(19, 'T-Shirts', 'Price is per piece.', 25.00, 0.15, 'https://i5.walmartimages.ca/images/Enlarge/683/375/6000202683375.jpg'),
 (20, 'Jackets', 'Price is per piece.', 45.00, 0.05, 'https://i5.walmartimages.ca/images/Enlarge/594/869/6000202594869.jpg'),
 (21, 'Dresses', 'Price is per piece.', 45.00, 0.03, 'https://i5.walmartimages.ca/images/Enlarge/345/942/6000203345942.jpg'),
 (22, 'Long-Sleeve Shirts', 'Price is per piece.', 20.00, 0.00, 'https://images-americanas.b2w.io/produtos/01/00/sku/119300/4/119300481SZ.jpg'),
 (23, 'Video Games', 'Price is per piece.', 79.99, 0.00, 'https://i5.walmartimages.ca/images/Enlarge/031/861/6000199031861.jpg'),
 (24, 'DVDS', 'Price is per piece.', 80.00, 0.02, 'https://images-americanas.b2w.io/produtos/01/00/img/131994/6/131994658_1SZ.jpg'),
 (25, 'Tvs','Price is per piece.', 1999.99, 0.02, 'https://images-americanas.b2w.io/produtos/01/00/img/3064506/1/3064506182_1SZ.jpg'),
-(26, 'Computers', 'Price is per piece.', 2500.00, 0.02, 'https://images-americanas.b2w.io/produtos/01/00/img/42466/1/42466177_1SZ.jpg');
+(26, 'Computers', 'Price is per piece.', 2500.00, 0.00, 'https://images-americanas.b2w.io/produtos/01/00/img/42466/1/42466177_1SZ.jpg');
 
 DROP TABLE IF EXISTS sales;
 CREATE TABLE IF NOT EXISTS sales (
