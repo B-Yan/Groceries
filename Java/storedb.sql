@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1:3306
--- Generation Time: Jun 08, 2021 at 08:15 PM
--- Server version: 5.7.31
--- PHP Version: 7.3.21
-
 DROP USER IF EXISTS 'tempUser'@'localhost';
 CREATE USER 'tempUser'@'localhost' IDENTIFIED BY 'pass123';
 GRANT ALL PRIVILEGES ON * . * TO 'tempUser'@'localhost';
@@ -16,40 +7,15 @@ CREATE DATABASE storedb;
 
 USE storedb;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+DROP TABLE IF EXISTS category;
+CREATE TABLE IF NOT EXISTS category (
+  id int NOT NULL AUTO_INCREMENT,
+  name varchar(50) NOT NULL,
+  description varchar(50) DEFAULT NULL,
+  PRIMARY KEY (id)
+);
 
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `storedb`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `category`
---
-
-DROP TABLE IF EXISTS `category`;
-CREATE TABLE IF NOT EXISTS `category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
-  `description` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `category`
---
-
-INSERT INTO `category` (`id`, `name`, `description`) VALUES
+INSERT INTO category (id, name, description) VALUES
 (1, 'Fruits&Vegtables', NULL),
 (2, 'Dairy&Eggs', 'Contains milk,eggs,cheese etc'),
 (3, 'Grain Products', 'Mostly bread'),
@@ -58,28 +24,18 @@ INSERT INTO `category` (`id`, `name`, `description`) VALUES
 (6, 'Clothes', 'For women,kids,men'),
 (7, 'Electronics', NULL);
 
--- --------------------------------------------------------
+DROP TABLE IF EXISTS item;
+CREATE TABLE IF NOT EXISTS item (
+  id int NOT NULL AUTO_INCREMENT,
+  name varchar(50) NOT NULL,
+  description varchar(50) DEFAULT 'Not Available',
+  price double DEFAULT NULL,
+  percentageOFF double DEFAULT NULL,
+  imageURL varchar(100) DEFAULT NULL,
+  PRIMARY KEY (id)
+);
 
---
--- Table structure for table `item`
---
-
-DROP TABLE IF EXISTS `item`;
-CREATE TABLE IF NOT EXISTS `item` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
-  `description` varchar(50) DEFAULT 'Not Available',
-  `price` double(6,2) DEFAULT NULL,
-  `percentageOFF` double(3,2) DEFAULT NULL,
-  `imageURL` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `item`
---
-
-INSERT INTO `item` (`id`, `name`, `description`, `price`, `percentageOFF`, `imageURL`) VALUES
+INSERT INTO item (id, name, description, price, percentageOFF, imageURL) VALUES
 
 (1, 'Apples', 'Price is per apple. The best apples in the US', 0.70, 0.00, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0000000004129.jpg'),
 (2, 'Oranges', 'Price is per orange. The best oranges in the US', 0.70, 0.02, 'https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0000000094012.jpg'),
@@ -108,28 +64,34 @@ INSERT INTO `item` (`id`, `name`, `description`, `price`, `percentageOFF`, `imag
 (25, 'Tvs','Price is per piece.', 1999.99, 0.02, 'https://images-americanas.b2w.io/produtos/01/00/img/3064506/1/3064506182_1SZ.jpg'),
 (26, 'Computers', 'Price is per piece.', 2500.00, 0.02, 'https://images-americanas.b2w.io/produtos/01/00/img/42466/1/42466177_1SZ.jpg');
 
+DROP TABLE IF EXISTS sales;
+CREATE TABLE IF NOT EXISTS sales (
+    id int NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id)
+);
 
--- --------------------------------------------------------
+DROP TABLE IF EXISTS salesItem;
+CREATE TABLE IF NOT EXISTS salesItem (
+    id int NOT NULL AUTO_INCREMENT,
+    sales_id int NOT NULL,
+    item_id int NOT NULL,
+    qte int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (sales_id) REFERENCES sales(id),
+    FOREIGN KEY (item_id) REFERENCES item(id)
+);
 
---
--- Table structure for table `itemsincategory`
---
+DROP TABLE IF EXISTS itemsincategory;
+CREATE TABLE IF NOT EXISTS itemsincategory (
+  id int NOT NULL AUTO_INCREMENT,
+  itemID int NOT NULL,
+  categoryID int NOT NULL,
+  PRIMARY KEY (id),
+  KEY itemID (itemID),
+  KEY categoryID (categoryID)
+);
 
-DROP TABLE IF EXISTS `itemsincategory`;
-CREATE TABLE IF NOT EXISTS `itemsincategory` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `itemID` int(11) NOT NULL,
-  `categoryID` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `itemID` (`itemID`),
-  KEY `categoryID` (`categoryID`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `itemsincategory`
---
-
-INSERT INTO `itemsincategory` (`id`, `itemID`, `categoryID`) VALUES
+INSERT INTO itemsincategory (id, itemID, categoryID) VALUES
 (1, 1, 1),
 (2, 2, 1),
 (3, 3, 1),
@@ -157,36 +119,20 @@ INSERT INTO `itemsincategory` (`id`, `itemID`, `categoryID`) VALUES
 (25, 25, 7),
 (26, 26, 7);
 
--- --------------------------------------------------------
+DROP TABLE IF EXISTS store;
+CREATE TABLE IF NOT EXISTS store (
+  id int NOT NULL AUTO_INCREMENT,
+  name varchar(50) NOT NULL,
+  hours varchar(200) DEFAULT NULL,
+  areOpen boolean DEFAULT NULL,
+  address varchar(50) DEFAULT NULL,
+  phoneNumber varchar(15) DEFAULT NULL,
+  email varchar(50) DEFAULT NULL,
+  PRIMARY KEY (id)
+);
 
---
--- Table structure for table `store`
---
-
-DROP TABLE IF EXISTS `store`;
-CREATE TABLE IF NOT EXISTS `store` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
-  `hours` varchar(200) DEFAULT NULL,
-  `areOpen` tinyint(1) DEFAULT NULL,
-  `address` varchar(50) DEFAULT NULL,
-  `phoneNumber` varchar(15) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `store`
---
-
-INSERT INTO `store` (`id`, `name`, `hours`, `areOpen`, `address`, `phoneNumber`, `email`) VALUES
+INSERT INTO store (id, name, hours, areOpen, address, phoneNumber, email) VALUES
 (1, 'Ocean', '1,9:00 am,5:00 pm/2,9:00 am,5:00 pm/3,9:00 am,5:00 pm/4,9:00 am,9:00 pm/5,9:00 am,5:00 pm/6,9:00 am,9:00 pm/7,9:00 am,5:00 pm', 1, '861 Ocean Ave', '(514)831-1234', 'ocean@stores.com'),
 (2, 'Sea', '1,9:00 am,5:00 pm/2,9:00 am,5:00 pm/3,9:00 am,5:00 pm/4,9:00 am,9:00 pm/5,9:00 am,5:00 pm/6,9:00 am,9:00 pm/7,9:00 am,5:00 pm', 1, '123 Sea Ave', '(514)288-1561', 'sea@stores.com'),
 (3, 'River', '1,8:00 am,5:00 pm/2,8:00 am,5:00 pm/3,8:00 am,5:00 pm/4,8:00 am,8:00 pm/5,8:00 am,5:00 pm/6,8:00 am,8:00 pm/7,8:00 am,5:00 pm', 1, '1513 River St', '(514)218-8622', 'river@stores.com'),
 (4, 'The midnight store', '1,8:00 pm,11:00 pm/2,8:00 pm,11:00 pm/3,8:00 pm,11:00 pm/4,8:00 pm,11:00 pm/5,8:00 pm,11:00 pm/6,8:00 pm,11:00 pm/7,8:00 pm,11:00 pm', 1, '1513 River St', '(514)218-8622', 'river@stores.com');
-
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

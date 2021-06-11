@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { ArrayType } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,15 +11,37 @@ import { Component, OnInit } from '@angular/core';
 export class CartEntityComponent implements OnInit {
   items: any;
   itemsLength: any;
+  salesId: any;
+  url: string = 'http://localhost:8080/api/newSale';
 
-  constructor() { }
+
+  constructor(private http: HttpClient) { }
 
   //TODO better verification of the data type before displaying info and before adding values
 
   ngOnInit(): void {
-    this.items = new Array(localStorage.length);
+    this.items = new Array();
     this.itemsLength = this.items.length;
     this.updateItems();
+    this.getId().subscribe((response: any) => {this.salesId = response;});
+  }
+
+  getId(){
+    return this.http.get(this.url);
+  }
+
+  postData(){
+    let myItemSummary:number[][] = new Array();
+    for(let i = 0; i<this.items.length; i++){ 
+      if(this.items[i].qte != undefined){myItemSummary.push([this.items[i].id, this.items[i].qte]);}
+    }
+    let myItems = {id: this.salesId, values: myItemSummary};
+    return this.http.post(this.url, myItems);
+  }
+
+  openPaypal(){
+    this.postData().subscribe((response: any) => {});
+    this.getId().subscribe((response: any) => {this.salesId = response;});
   }
 
   cartTotal(){

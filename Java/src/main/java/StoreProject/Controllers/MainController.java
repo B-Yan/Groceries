@@ -1,17 +1,16 @@
 package StoreProject.Controllers;
 
+import java.lang.reflect.Member;
 import java.util.List;
 
+import StoreProject.DAO.SalesDao;
+import StoreProject.DTO.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import StoreProject.DAO.CategoryDao;
 import StoreProject.DAO.ItemDao;
 import StoreProject.DAO.StoreDao;
-import StoreProject.DTO.Category;
-import StoreProject.DTO.ItemFormatted;
-import StoreProject.DTO.Store;
-import StoreProject.DTO.StoreHours;
 
 @CrossOrigin
 @RestController
@@ -26,6 +25,9 @@ public class MainController
 	
 	@Autowired
 	CategoryDao categoryDao;
+
+	@Autowired
+	SalesDao salesDao;
 
 
 	@GetMapping(value="items",produces="application/json")
@@ -74,5 +76,23 @@ public class MainController
 	public Category getCategoryforItem(@PathVariable("itemID") Integer id)
 	{
 		return categoryDao.getCategoryForItem(id);
+	}
+
+	/**
+	 *
+	 * @return the id of the new sale
+	 */
+	@GetMapping("/newSale")
+	public int getNewSaleId(){
+		return salesDao.getNewId();
+	}
+
+	/**
+	 *
+	 * @return true if the transaction is legitimate, false otherwise
+	 */
+	@PostMapping("/newSale")
+	public boolean putNewSale(@RequestBody SaleDTO saleDto){
+		return salesDao.treatSale(saleDto);
 	}
 }
