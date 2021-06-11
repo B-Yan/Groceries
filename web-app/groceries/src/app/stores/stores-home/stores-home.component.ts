@@ -10,7 +10,7 @@ export class StoresHomeComponent implements OnInit {
 
   stores: any;
   hours: any;
-  url: string = 'http://localhost:8080/api';
+  url: string = 'http://localhost:8090/api';
 
   constructor(private http: HttpClient) { }
 

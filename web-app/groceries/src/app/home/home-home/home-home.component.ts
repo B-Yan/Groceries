@@ -10,7 +10,7 @@ import { Router, NavigationExtras } from "@angular/router";
 })
 export class HomeHomeComponent implements OnInit {
 
-  url: string = 'http://localhost:8080/api'
+  url: string = 'http://localhost:8090/api'
 
   constructor(private http: HttpClient, private router: Router) { }
 
