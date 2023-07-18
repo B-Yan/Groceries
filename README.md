@@ -1,4 +1,4 @@
-# Groceries---group7
+# Groceries
 
 ## Author
 
